@@ -1,0 +1,145 @@
+/* Style for the main container */
+.container {
+    width: 95vw;
+    height: 80vh;
+    margin: 0 auto;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    transition: background-image 0.2s ease-in-out; /* Transition for the background */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Style for the slide container */
+.slide {
+    display: flex;
+    transition: transform 0.2s ease-in-out;
+    width: 360px; /* Set the exact width for the slides */
+    gap: 15px;
+    position: relative;
+    left: 0;
+    transform: translateX(0);
+}
+
+/* Style for each individual slide item */
+.item {
+    width: 120px;
+    height: 200px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.2s ease-in-out;
+}
+
+.item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.item:hover {
+    transform: scale(1.05);
+}
+
+/* Content styling for the text */
+.content {
+    padding: 20px;
+    color: #fff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    max-width: 40%;
+    opacity: 1; /* Start with full opacity */
+    transition: opacity 0.2s ease-in-out; /* Transition for fading */
+}
+
+/* Initialize the opacity of text elements */
+#location-name, #location-description {
+    opacity: 1; /* Make sure the opacity starts at 1 */
+    transition: opacity 0.2s ease-in-out; /* Add transition for smooth fading */
+}
+
+
+/* Text styles for name and description */
+.name {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.description {
+    font-size: 1.4rem;
+    line-height: 1.5;
+}
+
+/* Button styles */
+button {
+    padding: 10px 20px;
+    background-color: #ffffff;
+    color: #333;
+    border: none;
+    cursor: pointer;
+    transition: background 0.1s ease;
+    border-radius: 5px;
+    font-size: 1rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+    background-color: #ddd;
+}
+
+/* Navigation buttons */
+.button {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    display: flex;
+    gap: 10px;
+}
+
+/* Previous and Next Buttons */
+.prev, .next {
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.prev:hover, .next:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+/* Image hover effect */
+.item img:hover {
+    opacity: 0.9;
+    transition: opacity 0.2s ease;
+}
+
+/* Media queries for smaller screens */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        height: auto;
+    }
+    .content {
+        max-width: 90%;
+        text-align: center;
+    }
+    .slide {
+        justify-content: center;
+        gap: 10px;
+    }
+}
